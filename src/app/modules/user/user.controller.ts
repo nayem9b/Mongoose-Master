@@ -12,7 +12,7 @@ export const createUser = async (
 ) => {
   const data = req.body;
 
-  const user = await createUserToDB();
+  const user = await createUserToDB(data);
 
   res.status(200).json({
     status: "success",

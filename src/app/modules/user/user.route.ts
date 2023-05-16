@@ -13,7 +13,7 @@ const router = express.Router();
    /:id   dynamic 
 */
 
-router.get("/", createUser);
+router.get("/",  getUsers);
 // router.get("/admins", getAdminUsers);
 router.get("/:id", getUserById);
 router.post("/create-user", createUser);
