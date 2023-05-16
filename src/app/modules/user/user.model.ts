@@ -70,8 +70,30 @@ userSchema.method("fullName", function fullName() {
   return this.name.firstName + " " + this.name.lastName;
 });
 
-const User = model<IUser, UserModel>("User", userSchema);
+const User = model<IUser>("User", userSchema);
 
+// export const createUserToDB = async () => {
+//   const user = new User({
+//     id: "5445",
+//     role: "student",
+//     password: "joss",
+//     name: {
+//       firstName: "johnh",
+//       middleName: "doe",
+//       lastName: "john",
+//     },
+
+//     gender: "male",
+//     email: "abc@gmail.com",
+//     contactNo: "012122",
+//     emergencyContactNo: "15125",
+//     presentAddress: "abc",
+//     permanentAddress: "xyz",
+//   });
+//   await user.save();
+//   console.log(user);
+// };
+// createUserToDB();
 export default User;
 
 // instance methods --> instance er methods

@@ -1,7 +1,7 @@
 import express from "express";
 import {
   createUser,
-  getAdminUsers,
+  // getAdminUsers,
   getUserById,
   getUsers,
 } from "./user.controller";
@@ -13,8 +13,8 @@ const router = express.Router();
    /:id   dynamic 
 */
 
-router.get("/", getUsers);
-router.get("/admins", getAdminUsers);
+router.get("/", createUser);
+// router.get("/admins", getAdminUsers);
 router.get("/:id", getUserById);
 router.post("/create-user", createUser);
 
