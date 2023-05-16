@@ -1,6 +1,7 @@
 import express from "express";
 import {
   createUser,
+  getAdminUsers,
   // getAdminUsers,
   getUserById,
   getUsers,
@@ -14,7 +15,7 @@ const router = express.Router();
 */
 
 router.get("/",  getUsers);
-// router.get("/admins", getAdminUsers);
+router.get("/admins", getAdminUsers);
 router.get("/:id", getUserById);
 router.post("/create-user", createUser);
 

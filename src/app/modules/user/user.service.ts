@@ -3,10 +3,10 @@ import User from "./user.model";
 
 export const createUserToDB = async (payload:IUser):Promise<IUser> => {
   // creating a new user
-  const user = new User(payload);
-  await user.save();
+  const user = new User(payload); //!Instance toiri korchi
+  await user.save(); //!Built in Instance er method
   console.log(user);
-  // console.log(user.fullName());
+  console.log(user.fullName());
 
   return user;
 };
@@ -23,11 +23,11 @@ export const getUserByIdFromDB = async (
   return user;
 };
 
-// export const getAdminUsersFromDB = async () => {
-//   const admins = await User.getAdminUsers();
-//   console.log(admins);
-//   return admins;
-// };
+export const getAdminUsersFromDB = async () => {
+  const admins = await User.find({role: "admin"}, {name:1})
+  console.log(admins);
+  return admins;
+};
 
 //Class -> Attach -> Method -> Directly call using Class
 // user = new User

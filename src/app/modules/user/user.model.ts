@@ -1,7 +1,7 @@
 import mongoose, { Schema, model, Model } from "mongoose";
-import { IUser, IUserMethods, UserModel } from "./user.interface";
+import { IUser, IUserMethods } from "./user.interface";
 
-// type UserModel = Model<IUser, {}, IUserMethods>;
+type UserModel = Model<IUser, {}, IUserMethods>;
 
 const userSchema = new Schema<IUser, UserModel, IUserMethods>({
   id: {
